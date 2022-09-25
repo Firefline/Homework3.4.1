@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <cstring>
+#include <string>
 
 class address
 {
@@ -13,9 +13,11 @@ public:
     int house = 0;
     int room = 0;
 public:
+    address(std::string city, std::string street, int house, int room) {}
+    address() {}
     std::string get_output_address()
     {
-        std::string glue = city + ", " + street + ", " + static_cast<char>(house) + ", " + static_cast<char>(room);
+        std::string glue = city + ", " + street + ", " + std::to_string(house) + ", " + std::to_string(room);
         return glue;
     }
 };
